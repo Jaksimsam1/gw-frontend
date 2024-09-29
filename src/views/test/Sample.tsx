@@ -5,10 +5,12 @@ export const Sample = () => {
 
     const init = () => {
         testReq().then(data => {
-            console.log(data)
+            if(data?.status === 200) {
+                console.log(data)
+            }
         })
         .catch(err => {
-
+            console.log(err)
         })
     }
 
