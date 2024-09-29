@@ -1,14 +1,13 @@
-import axios from "axios";
+import axios, { Axios } from "axios";
 
-const instance = axios.create({
-    baseURL: '',
+const instance: Axios = axios.create({
+    baseURL: process.env.REACT_APP_TEST_REQ_SERVER,
     withCredentials: true,
     headers: {
         'Content-Type': 'application/json'
     }
 })
 
-//set Authorization when logged in
 instance.interceptors.request.use(function (config) {
     return config;
 })
